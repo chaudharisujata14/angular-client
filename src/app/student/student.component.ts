@@ -12,13 +12,14 @@ export class StudentComponent implements OnInit {
 
   ngOnInit() {
     const observableresult = this.service.select();
-    observableresult.subscribe(dataout => {
-      console.log(dataout);
-      console.log(dataout.status);
-      if ( dataout.status === "success" ) {
-        this.students = dataout.data;
+    observableresult.subscribe(result => {
+      console.log(result);
+      console.log(result[' data']);
+      if (result.status(1) === 'success') {
+        this.students = result.data;
+        console.log(result.data);
       } else {
-        console.log(dataout.error);
+        console.log(result.error);
       }
     });
   }
