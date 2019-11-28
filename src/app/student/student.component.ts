@@ -15,7 +15,7 @@ export class StudentComponent implements OnInit {
     observableresult.subscribe(result => {
       console.log(result);
       console.log(result[' data']);
-      if (result.status(1) === 'success') {
+      if (result.status === 'success') {
         this.students = result.data;
         console.log(result.data);
       } else {
