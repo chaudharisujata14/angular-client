@@ -14,12 +14,12 @@ export class StudentComponent implements OnInit {
     const observableresult = this.service.select();
     observableresult.subscribe(result => {
       console.log(result);
-      console.log(result[' data']);
-      if (result.status === 'success') {
-        this.students = result.data;
-        console.log(result.data);
+      console.log(result.d);
+      if (result.s === 'status') {
+        this.students = result.d;
+        console.log(result.d);
       } else {
-        console.log(result.error);
+        console.log(result.e);
       }
     });
   }
